@@ -5,9 +5,9 @@ const { Genre, validate } = require('../models/genre');
 const auth = require('../middleware/auth');
 const admin = require('../middleware/admin');
 
-router.get('/', async (req, res) => {
+router.get('/', async (req, res, next) => {
   const genres = await Genre.find().sort('name');
-  res.send(genres);
+  return res.send(genres);
 });
 
 router.post('/', auth, async (req, res) => {
