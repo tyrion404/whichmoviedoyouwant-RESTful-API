@@ -38,7 +38,7 @@ mongoose
     useCreateIndex: true,
     useFindAndModify: false,
   })
-  .then(() => winston.info('Connected to MongoDB.'))
+  .then(() => winston.info(`Connected to ${config.get('MONGO_URI')}.`))
   .catch((err) => winston.error(err));
 
 // processing req
@@ -57,4 +57,8 @@ app.use(error);
 
 // port and listening
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => winston.info(`Listening on PORT ${PORT}...`));
+const server = app.listen(PORT, () =>
+  winston.info(`Listening on PORT ${PORT}...`)
+);
+
+module.exports = server;

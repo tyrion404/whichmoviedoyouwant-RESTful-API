@@ -1,3 +1,4 @@
 {
+  "MONGO_URI": "mongodb+srv://xscotophilic:Noone404_5593@cluster0-olxuz.mongodb.net/whichmoviedoyouwant_tests?retryWrites=true&w=majority",
   "JWT_KEY": "1218e1faabe32bb865209502f8017964"
 }
