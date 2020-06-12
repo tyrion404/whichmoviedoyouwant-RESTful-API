@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watchAll --verbose --runInBand --coverage",
+    "test": "jest --watchAll --verbose --runInBand",
     "dev": "nodemon index.js"
   },
   "keywords": [],
@@ -20,6 +20,7 @@
     "joi-objectid": "^3.0.1",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.15",
+    "moment": "^2.26.0",
     "mongoose": "^5.9.17",
     "winston": "^3.2.1",
     "winston-mongodb": "^5.0.1"

@@ -1,4 +1,11 @@
 .DS_Store
+
+# config
 /config/development.json
+/config/test.json
+
+# modules
 nodemodules/
+
+# test coverage
 coverage/
