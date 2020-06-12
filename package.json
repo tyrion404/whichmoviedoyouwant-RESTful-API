@@ -5,17 +5,23 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --watchAll --verbose --runInBand",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": "12.7.0"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^4.0.1",
+    "compression": "^1.7.4",
     "config": "^3.3.1",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
     "fawn": "^2.1.5",
+    "helmet": "^3.23.0",
     "joi": "^14.3.1",
     "joi-objectid": "^3.0.1",
     "jsonwebtoken": "^8.5.1",

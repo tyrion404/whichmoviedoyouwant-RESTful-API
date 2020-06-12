@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const express = require('express');
 const config = require('config');
 const winston = require('winston');
+const helmet = require('helmet');
+const compression = require('compression');
 require('winston-mongodb');
 require('express-async-errors');
 
@@ -44,6 +46,11 @@ mongoose
 // processing req
 app.use(express.json());
 
+// applying middleware error
+app.use(error);
+app.use(helmet());
+app.use(compression());
+
 // route handlers
 app.use('/api/genres', require('./routes/genres'));
 app.use('/api/customers', require('./routes/customers'));
@@ -52,9 +59,6 @@ app.use('/api/rentals', require('./routes/rentals'));
 app.use('/api/users', require('./routes/users'));
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/returns', require('./routes/returns'));
-
-// applying middleware error
-app.use(error);
 
 // port and listening
 const PORT = process.env.PORT || 3000;
